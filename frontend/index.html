@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crowd Density Analyzer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="app-background"></div>
+    <div id="app">
+      <header class="app-header">
+        <h1>Crowd Density Analyzer</h1>
+        <p>Upload a surveillance image to dynamically detect crowd volume, evaluate density heatmaps, and assess security requirements.</p>
+      </header>
+
+      <main class="main-content">
+        <section class="upload-section glass-panel">
+          <div class="upload-area" id="upload-area">
+            <input type="file" id="file-input" accept="image/*" hidden />
+            <div class="upload-content">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="upload-icon"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+              <h3>Drag & Drop or Click to Upload</h3>
+              <p>Supports JPG, PNG, WEBP</p>
+            </div>
+            <img id="image-preview" class="image-preview hidden" />
+          </div>
+          <button id="analyze-btn" class="primary-btn" disabled>
+            <span class="btn-text">Analyze Image</span>
+            <div class="loader hidden" id="btn-loader"></div>
+          </button>
+          <div id="error-message" class="error-message hidden"></div>
+        </section>
+
+        <section class="results-section hidden" id="results-section">
+          
+          <div class="metrics-grid">
+            <div class="metric-card glass-panel">
+              <h4>Estimated Crowd Count</h4>
+              <div class="metric-value highlight" id="res-count">0</div>
+            </div>
+            <div class="metric-card glass-panel">
+              <h4>Recommended Security Guards</h4>
+              <div class="metric-value highlight" id="res-guards">0</div>
+            </div>
+          </div>
+
+          <div class="details-grid">
+            <div class="heatmap-card glass-panel">
+              <h3>Density Heatmap</h3>
+              <div class="image-container">
+                <img id="res-heatmap" class="heatmap-img" src="" alt="Heatmap" />
+              </div>
+            </div>
+
+            <div class="analytics-card glass-panel">
+              <h3>Directional Analysis</h3>
+              <div class="barchart" id="barchart">
+                <!-- Bars rendered via JS -->
+              </div>
+              <div class="highest-density-note mt-4">
+                <strong>Highest Density: </strong>
+                <span id="res-high-dir" class="highlight-text">None</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
