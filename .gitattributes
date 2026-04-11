@@ -1,0 +1,11 @@
+# Ignore web languages from GitHub language statistics
+*.html linguist-detectable=false
+*.css linguist-detectable=false
+*.js linguist-detectable=false
+*.json linguist-detectable=false
+*.md linguist-detectable=false
+*.xml linguist-detectable=false
+
+# Explicitly ensure TypeScript and Python are calculated
+*.ts linguist-detectable=true
+*.py linguist-detectable=true
