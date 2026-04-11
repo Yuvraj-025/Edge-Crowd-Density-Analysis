@@ -54,3 +54,5 @@ UI_Service/
 
 # PyTorch Model Files
 *.pth
+*.mat
+*.jpg
