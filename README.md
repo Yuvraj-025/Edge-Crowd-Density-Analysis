@@ -6,7 +6,8 @@
 ![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)
 ![Docker](https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white)
 
-A modern, highly accurate machine learning system designed to dynamically evaluate crowd density from surveillance images, perform directional analysis, and recommend security resource allocations in real-time.
+A lightweight edge-ready crowd density analysis system built with an optimized MC-CNN architecture for low-latency inference and real-time surveillance analytics. Its Dockerized microservice pipeline and minimal TypeScript frontend ensure fast deployment, reduced computational overhead, and efficient operation across constrained edge devices and distributed monitoring environments.
+
 
 ![System Showcase](output.png)
 
